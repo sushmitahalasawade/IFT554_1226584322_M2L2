@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width,initial-scale = 1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/calculate" method = "post">
+        <input type = "number" name = "num1" placeholder="Enter First Number" required>
+        <input type = "number" name = "num2" placeholder="Enter Second Number" required>
+        <button type="submit">Calculate</button>
+    </form>
+    <p>
+        <h1>Calculation Results:</h1>
+        <p>sum: <%= sum %></p>
+        <p>difference: <%= difference %></p>
+        <p>product: <%= product %></p>
+        <!-- <p>quotient: <%= quotient %></p> -->
+        <p>
+            <% if (isFinite(quotient)) { %>
+                <p>quotient: <%= quotient %></p>
+            <% } else { %>
+                <p>cannot divide by zero.</p>
+            <% } %>
+        </p>
+    </p>
+</body>
+</html>
