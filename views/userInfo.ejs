@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width,initial-scale = 1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <!-- <h1>User Information:</h1> -->
+    <h1>User List:</h1>
+    <form action="/createUser" method = "POST">
+        <input type = "text" name = "name" placeholder="Name" required>
+        <input type = "number" name = "age" placeholder="Age" required>
+        <input type = "text" name = "email" placeholder="Email" required>
+      
+        <button type="submit">Add User</button>
+    </form>
+
+   
+    <!-- <p>Name: <%=userName %></p>
+    <p>Age: <%=userAge %></p>
+    <p>Email: <%=userEmail %></p> -->
+    <ul>
+        <%users.forEach(user=>{%>
+            <li>
+                <p>Name: <%= user.userName %></p>
+                <p>Age: <%= user.userAge %></p>
+                <p>Email: <%= user.userEmail %></p>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
