@@ -66,6 +66,18 @@ app.get("/user", (req, res) => {
   res.redirect("/user")
 });
 
+//Exercise 4: Spread Operator
+const fruits = [];
+// the get route for book page
+app.get("/fruit", (req, res) => {
+  res.render("fruits",{fruits});
+});
+
+app.post("/addFruit", (req, res) => {
+  const { fruit } = req.body;
+  fruits.push(fruit);
+  res.redirect("/fruit");
+});
 
 // start server on port 4000
 var port = 4000;
