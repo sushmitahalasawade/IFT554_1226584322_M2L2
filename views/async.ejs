@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width,initial-scale = 1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "asyncButton" >Simulate Asynchronous Operation</button>
+    <p id = "result"></p>
+    
+</body>
+<script>
+    debugger;
+    const asyncButton = document.getElementById("asyncButton");
+    const result = document.getElementById("result");
+    asyncButton.addEventListener("click",async()=>{
+        debugger;
+        result.textContent="Loading...";
+        const response = await fetch("/simulateAsync");
+        const data = await response.json();
+        if (data.success) {
+                result.textContent = data.message;
+            } else {
+                result.textContent = "Error occured!.";
+            }
+        
+
+    });
+
+</script>
+
+
+</html>

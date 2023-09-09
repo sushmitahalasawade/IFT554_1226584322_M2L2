@@ -79,6 +79,18 @@ app.post("/addFruit", (req, res) => {
   res.redirect("/fruit");
 });
 
+//Exercise 5: Promises
+app.get("/async", (req, res) => {
+  res.render("async");
+});
+
+app.get("/simulateAsync",(req,res)=>{
+  setTimeout(() => {
+    res.json({message: "Asynchronous operation completed!",success:true});
+  }, 2000);
+
+});
+
 // start server on port 4000
 var port = 4000;
 app.listen(port, () => {
