@@ -91,6 +91,24 @@ app.get("/simulateAsync",(req,res)=>{
 
 });
 
+//Exercise 6: async/ await
+const axios = require("axios")
+app.get("/httpRequest", (req, res) => {
+  res.render("httpRequest");
+});
+
+app.post("/makeRequest",async(req,res)=>{
+  const {url} = req.body;
+  try{
+    const response = await axios.get(url);
+    res.json(response.data);
+
+  }catch(error){
+    res.json({errror:error.message});
+  }
+
+});
+
 // start server on port 4000
 var port = 4000;
 app.listen(port, () => {
